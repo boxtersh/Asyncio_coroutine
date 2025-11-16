@@ -40,7 +40,7 @@ async def countdown(n):
 
 # Задача №5
 async def fetch_data(index):
-    delay = rint(1, 13)
+    delay = rint(1, 5)
     print(f'\033[31mЗапущена задача №{index}\033[0m с паузой {delay}сек.')
     await asyncio.sleep(delay)
     print(f'\033[32mДанные задачи №{index}\033[0m с паузой {delay}сек. \033[32mполучены\033[0m')
