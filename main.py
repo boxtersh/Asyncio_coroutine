@@ -40,10 +40,10 @@ async def countdown(n):
 
 # Задача №5
 async def fetch_data(index):
-    delay = rint(1, 5)
-    print(f'Запущена задача №{index} с паузой {delay}сек.')
+    delay = rint(1, 13)
+    print(f'\033[31mЗапущена задача №{index}\033[0m с паузой {delay}сек.')
     await asyncio.sleep(delay)
-    print(f'Данные задачи №{index} с паузой {delay}сек. получены')
+    print(f'\033[32mДанные задачи №{index}\033[0m с паузой {delay}сек. \033[32mполучены\033[0m')
 
 
 async def coroutine_func(index):
@@ -53,9 +53,10 @@ async def coroutine_func(index):
 async def main():
     await say_hello(1)
     await delayed_print('Начало программы', 2)
-    await delayed_print('Окончание программы', 3)
+    await delayed_print('Окончание программы', 4)
     await asyncio.gather(*create_list_coroutine(task, 4))
     await countdown(13)
+    await asyncio.gather(*create_list_coroutine(fetch_data, 14))
     a, b, c = await asyncio.gather(*create_list_coroutine(coroutine_func, 4))
     print(a + b + c)
 
